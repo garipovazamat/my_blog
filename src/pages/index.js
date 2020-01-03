@@ -1,21 +1,31 @@
-import React from "react"
-import { Link } from "gatsby"
-
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import React from 'react'
+import "../components/layout.css"
+import SocialIcons from "../components/basic/SocialIcons"
+import Navigation from "../components/basic/Navigation"
+import portret from '../images/portret2.jpg'
 
 const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
+  <div className="container">
+    <div className="row justify-content-center">
+      <div className="center-block col-md-8">
+        <div>
+          <img src={portret} name="Garipov Azamat" width="200" height="200" className="rounded mx-auto d-block" alt='Гарипов Азамат'/>
+          <h1 className="text-center h2">
+            Гарипов Азамат <br/>
+            <small>Backend Developer</small>
+          </h1>
+          <Navigation position="center"/>
+          <hr />
+          <p className="text-justify">
+            Привет. Меня зовут Азамат. Проживаю в городе&nbsp;<a href="https://goo.gl/maps/2QXhCN5wLey2VFbK8" target='_blank' rel='noopener noreferrer'>Челябинск</a>.
+            Работаю backend разработчиком в компании&nbsp;<a href="//n1.ru" target='_blank' rel='noopener noreferrer'>N1</a>.
+            Здесь вы можете почитать мои статьи и узнать обо мне подробнее.
+          </p>
+          <SocialIcons/>
+        </div>
+      </div>
     </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
+  </div>
 )
 
 export default IndexPage
