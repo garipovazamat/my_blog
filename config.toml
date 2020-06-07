@@ -1,0 +1,121 @@
+baseURL = "https://garipovazamat.github.io"
+defaultContentLanguage = "ru"
+languageCode = "ru"
+title = "Гарипов Азамат"
+description = "Мои мысли и статьи на разные темы"
+keywords = ["Блог", "бэкенд", "backend"]
+defaultTheme = "auto"
+
+dateFormat = "2006-01-02"
+
+theme = "LoveIt"
+
+[params]
+  # LoveIt theme version
+  version = "0.2.X"
+
+  [params.app]
+    # whether to omit favicon resource links
+    noFavicon = false
+    # modern SVG favicon to use in place of older style .png and .ico files
+    svgFavicon = ""
+    # Android browser theme color
+    themeColor = "#ffffff"
+    # Safari mask icon color
+    iconColor = "#5bbad5"
+    # Windows v8-10 tile color
+    tileColor = "#da532c"
+
+  #Section (all posts) page config
+  [params.section]
+    paginate = 20
+    dateFormat = "01-02"
+
+  # LoveIt NEW | 0.2.0 List (category or tag) page config
+  [params.list]
+    paginate = 20
+    dateFormat = "01-02"
+
+  [params.home]
+    [params.home.profile]
+      enable = true
+      # URL of avatar shown in home page
+      avatarURL = "/portret2.jpg"
+      # LoveIt CHANGED | 0.2.7 title shown in home page (HTML format is supported)
+      title = "Гарипов Азамат"
+      subtitle = "Backend разработчик"
+      # whether to use typeit animation for subtitle
+      typeit = true
+      social = true
+      # LoveIt NEW | 0.2.0 disclaimer (HTML format is supported)
+      disclaimer = "Пишу тут статьи о разработке и не только"
+    # Home page posts
+    [params.home.posts]
+      enable = true
+      # special amount of posts in each home posts page
+      paginate = 6
+
+  [params.social]
+    GitHub = "garipovazamat"
+    Linkedin = "%D0%B0%D0%B7%D0%B0%D0%BC%D0%B0%D1%82-%D0%B3%D0%B0%D1%80%D0%B8%D0%BF%D0%BE%D0%B2-a50333a8/"
+    Twitter = "AzamatGaripov"
+    Instagram = "garipovazamat/"
+    Telegram = "GaripovAzamat"
+    VK = "garipovazamat"
+
+  [params.page]
+    [params.page.share]
+      enable = true
+      Twitter = true
+      Facebook = true
+      Linkedin = true
+      VK = false
+
+  [params.page.comment]
+      enable = true
+      # Disqus comment config
+      [params.page.comment.disqus]
+        # LoveIt NEW | 0.1.1
+        enable = true
+        # Disqus shortname to use Disqus in posts
+        shortname = "garipovazamat-1"
+
+[author]
+  name = "Азамат"
+  link = "/"
+
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    # you can add extra information before the name (HTML format is supported), such as icons
+    pre = ""
+    # you can add extra information after the name (HTML format is supported), such as icons
+    post = ""
+    name = "Все статьи"
+    url = "/posts/"
+    # title will be shown when you hover on this menu link
+    title = ""
+    weight = 1
+  [[menu.main]]
+    identifier = "categories"
+    pre = ""
+    post = ""
+    name = "Категории"
+    url = "/categories/"
+    title = ""
+    weight = 3
+  [[menu.main]]
+    identifier = "about"
+    pre = ""
+    post = ""
+    name = "Обо мне"
+    url = "/about"
+    title = ""
+    weight = 3
+
+# Markup related configuration in Hugo
+[markup]
+  # Syntax Highlighting (https://gohugo.io/content-management/syntax-highlighting)
+  [markup.highlight]
+    # false is a necessary configuration (https://github.com/dillonzq/LoveIt/issues/158)
+    noClasses = false
