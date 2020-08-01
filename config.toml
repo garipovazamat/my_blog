@@ -1,6 +1,7 @@
 baseURL = "https://garipovazamat.github.io"
 defaultContentLanguage = "ru"
-languageCode = "ru"
+summaryLength = 1000
+
 title = "Гарипов Азамат"
 description = "Мои мысли и статьи на разные темы"
 keywords = ["Блог", "бэкенд", "backend"]
@@ -54,6 +55,7 @@ theme = "LoveIt"
       enable = true
       # special amount of posts in each home posts page
       paginate = 6
+      defaultHiddenFromHomePage = false
 
   [params.social]
     GitHub = "garipovazamat"
@@ -62,6 +64,9 @@ theme = "LoveIt"
     Instagram = "garipovazamat/"
     Telegram = "GaripovAzamat"
     VK = "garipovazamat"
+
+  [params.verification]
+    yandex = "fc4f4e826ae11872"
 
   [params.page]
     [params.page.share]
@@ -80,6 +85,9 @@ theme = "LoveIt"
         # Disqus shortname to use Disqus in posts
         shortname = "garipovazamat-1"
 
+  [params.page.toc]
+      enable = true
+
 [author]
   name = "Азамат"
   link = "/"
@@ -97,13 +105,13 @@ theme = "LoveIt"
     title = ""
     weight = 1
   [[menu.main]]
-    identifier = "categories"
+    identifier = "devlog"
     pre = ""
     post = ""
-    name = "Категории"
-    url = "/categories/"
+    name = "Dev log"
+    url = "/categories/dev-log/"
     title = ""
-    weight = 3
+    weight = 2
   [[menu.main]]
     identifier = "about"
     pre = ""
@@ -112,6 +120,14 @@ theme = "LoveIt"
     url = "/about"
     title = ""
     weight = 3
+  [[menu.main]]
+    identifier = "categories"
+    pre = ""
+    post = ""
+    name = "Категории"
+    url = "/categories/"
+    title = ""
+    weight = 4
 
 # Markup related configuration in Hugo
 [markup]
