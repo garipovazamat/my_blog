@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Заметки за август - Гарипов Азамат</title><meta name="Description" content=""><meta property="og:title" content="Заметки за август" />
+<meta property="og:description" content="Благодаря тому, что я был в отпуске, в этом месяце я успел сделать большую часть своего проекта. Осталось решить проблемы с нейронной сетью. Она недостаточно качественно распознает выполнение планки. Скоро начну писать статьи об этом проекте. Думаю через месяц получится выпустить первую тестовую версию.
+Эти заметки связаны с самостоятельной работой над своим проектом и книгой, которую я прочел этом месяце." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://garipovazamat.github.io/devlog/august_notes/" /><meta property="article:section" content="devlog" />
+<meta property="article:published_time" content="2020-09-05T15:19:31+05:00" />
+<meta property="article:modified_time" content="2020-09-05T15:19:31+05:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Заметки за август"/>
+<meta name="twitter:description" content="Благодаря тому, что я был в отпуске, в этом месяце я успел сделать большую часть своего проекта. Осталось решить проблемы с нейронной сетью. Она недостаточно качественно распознает выполнение планки. Скоро начну писать статьи об этом проекте. Думаю через месяц получится выпустить первую тестовую версию.
+Эти заметки связаны с самостоятельной работой над своим проектом и книгой, которую я прочел этом месяце."/>
+<meta name="application-name" content="Гарипов Азамат">
+<meta name="apple-mobile-web-app-title" content="Гарипов Азамат"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://garipovazamat.github.io/devlog/august_notes/" /><link rel="prev" href="https://garipovazamat.github.io/devlog/first-log/" /><link rel="next" href="https://garipovazamat.github.io/devlog/september_notes/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css">
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(56931001, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/56931001" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+<meta name="yandex-verification" content="fc4f4e826ae11872" />
+</head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Гарипов Азамат">Гарипов Азамат</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/categories/%D1%81%D1%82%D0%B0%D1%82%D1%8C%D0%B8/"> Cтатьи </a><a class="menu-item" href="/devlog/"> Dev log </a><a class="menu-item" href="/about"> Обо мне </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Сменить Тему">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Гарипов Азамат">Гарипов Азамат</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/categories/%D1%81%D1%82%D0%B0%D1%82%D1%8C%D0%B8/" title="">Cтатьи</a><a class="menu-item" href="/devlog/" title="">Dev log</a><a class="menu-item" href="/about" title="">Обо мне</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Сменить Тему">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="page single special"><h1 class="single-title animated pulse faster">Заметки за август</h1><div class="content" id="content"><p>Благодаря тому, что я был в отпуске, в этом месяце я успел сделать большую часть своего проекта. Осталось решить проблемы с нейронной сетью. Она недостаточно качественно распознает выполнение планки. Скоро начну писать статьи об этом проекте. Думаю через месяц получится выпустить первую тестовую версию.</p>
+<p>Эти заметки связаны с самостоятельной работой над своим проектом и книгой, которую я прочел этом месяце.</p>
+<h2 id="попробовал-писать-комментарии-в-коде-перед-написанием-основной-логики">Попробовал писать комментарии в коде перед написанием основной логики</h2>
+<p>Этот прием я взял из книги “Философия разработки ПО”. Основное преимущество такого подхода - абстракция кода описывается в самом начале. Еще не написав код, я могу увидеть ошибки и недостатки в дизайне кода. Если комментарий к интерфейсу или классу получается сложным, это уже сигнал к тому, чтобы подумать над другими вариантами.</p>
+<p>Такой подход действительно работает. Я буд применять его дальше, надеюсь он будет помогать писать код лучше и сделает работу интереснее.</p>
+<h2 id="перепланирование-работ-повышает-мотивацию">Перепланирование работ повышает мотивацию</h2>
+<p>Когда я начал делать свой проект в этом месяце, я почувствовал огромную лень, хотя вначале проекта у меня очень горели глаза. Подумав, в чем проблема, я понял, что проект усложнился и стало труднее держать в голове, что нужно делать.</p>
+<p>Тогда я решил все перепланировать. Я создал доску в Trello и начал накидывать задачи, которые обязательно нужно сделать. Затем возникло понимание, что порядок работ немного неправильный. Далее начали вспоминаться другие мелкие задачи, без которых не обойтись, а какие являются лишними.</p>
+<p>Все это дало лучшее понимание того, когда проект будет завершен, за что мне нужно браться сейчас и почему это все так важно. Конечная цель проекта также со временем улетучивается. Особенно если есть большие перерывы в работе. Поэтому нужно все повторно обдумывать.</p>
+<h2 id="опубликовал-вторую-статью-на-хабре">Опубликовал вторую статью на хабре</h2>
+<p>Я написал заметки к книге <a href="https://habr.com/ru/post/517436/" target="_blank" rel="noopener noreffer">“Философия разработки ПО”</a>, которую я дочитал в этом месяце.</p>
+<p>Вторая статья оказалась менее расположенной к критике, поскольку я написал лишь краткие заметки по книге, стараясь писать как можно меньше своего мнения. Однако это не помешало токсично критиковать её читателям на хабре, придираясь к незначительным мелочам.</p>
+<p>Но все же в ней были ошибки, которые стоит учесть для будущих статей. В первую очередь стоит больше смотреть на содержимое с точки зрения читателя. Во многих местах я писал о чем либо, не учитывая, что для того, чтобы понять содержимое, нужно давать больше вводных.</p>
+<p>Во-вторых, в заметках по книге стоит больше писать об общем видении проблемы автором. Я писал заметки как просто набор советов. Для меня это было проще, поскольку я вел заметки для себя, и именно их я не хотел забывать. Поэтому я перенес их в статью, добавляя некоторые подробности для стороннего читателя.<br>
+Но это не лучший вариант, чтобы вызвать интерес к книге. Следующий раз стоит отталкиваться от проблемы книги и развивать мысль с точки зрения автора.</p></div><div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
+            </noscript></div></div></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Сделано <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.91.2">Hugo</a> | Тема - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Азамат</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Наверх">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="Посмотреть комментарии">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="https://garipovazamat-1.disqus.com/embed.js" defer></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Копировать в буфер обмена","maxShownLines":10},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

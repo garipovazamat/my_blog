@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Devlogs on Гарипов Азамат</title>
+    <link>https://garipovazamat.github.io/devlog/</link>
+    <description>Recent content in Devlogs on Гарипов Азамат</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 06 Oct 2020 20:16:31 +0500</lastBuildDate><atom:link href="https://garipovazamat.github.io/devlog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Заметки за сентябрь</title>
+      <link>https://garipovazamat.github.io/devlog/september_notes/</link>
+      <pubDate>Tue, 06 Oct 2020 20:16:31 +0500</pubDate>
+      
+      <guid>https://garipovazamat.github.io/devlog/september_notes/</guid>
+      <description>&lt;p&gt;Этот месяц был ленивей чем прошлый. Первую версию своего проекта закончить я не успел. Возможно из-за того, что много отвлекался на другие дела кроме работы и своего проекта. Надеюсь следующий месяц будет интереснее.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Заметки за август</title>
+      <link>https://garipovazamat.github.io/devlog/august_notes/</link>
+      <pubDate>Sat, 05 Sep 2020 15:19:31 +0500</pubDate>
+      
+      <guid>https://garipovazamat.github.io/devlog/august_notes/</guid>
+      <description>&lt;p&gt;Благодаря тому, что я был в отпуске, в этом месяце я успел сделать большую часть своего проекта. Осталось решить проблемы с нейронной сетью. Она недостаточно качественно распознает выполнение планки. Скоро начну писать статьи об этом проекте. Думаю через месяц получится выпустить первую тестовую версию.&lt;/p&gt;
+&lt;p&gt;Эти заметки связаны с самостоятельной работой над своим проектом и книгой, которую я прочел этом месяце.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Первый лог</title>
+      <link>https://garipovazamat.github.io/devlog/first-log/</link>
+      <pubDate>Fri, 31 Jul 2020 22:41:07 +0500</pubDate>
+      
+      <guid>https://garipovazamat.github.io/devlog/first-log/</guid>
+      <description>С этого поста я начинаю вести devlog. то заметки о том, что нового и интересного я узнал в разработке, проектировании и решении своих профессиональных задач.</description>
+    </item>
+    
+  </channel>
+</rss>

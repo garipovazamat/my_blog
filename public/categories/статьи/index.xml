@@ -1,0 +1,63 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Статьи - Категория - Гарипов Азамат</title>
+        <link>https://garipovazamat.github.io/categories/%D1%81%D1%82%D0%B0%D1%82%D1%8C%D0%B8/</link>
+        <description>Статьи - Категория - Гарипов Азамат</description>
+        <generator>Hugo -- gohugo.io</generator><lastBuildDate>Sun, 09 Jan 2022 21:37:00 &#43;0500</lastBuildDate><atom:link href="https://garipovazamat.github.io/categories/%D1%81%D1%82%D0%B0%D1%82%D1%8C%D0%B8/" rel="self" type="application/rss+xml" /><item>
+    <title>Книги, которые я прочел в 2021 году</title>
+    <link>https://garipovazamat.github.io/posts/books2021/</link>
+    <pubDate>Sun, 09 Jan 2022 21:37:00 &#43;0500</pubDate>
+    <author>Автор</author>
+    <guid>https://garipovazamat.github.io/posts/books2021/</guid>
+    <description><![CDATA[<p>В этом году я прочитал 5 книг. В первую очередь я хотел начать осваивать soft-skills. Но не обошлось без технической и художественной литературы. Несколько книг были очень полезные и я их готов рекомендовать.</p>]]></description>
+</item><item>
+    <title>Как сделать работу программиста интереснее</title>
+    <link>https://garipovazamat.github.io/posts/how_to_do_work_more_interesting/</link>
+    <pubDate>Sun, 20 Jun 2021 19:42:00 &#43;0500</pubDate>
+    <author>Автор</author>
+    <guid>https://garipovazamat.github.io/posts/how_to_do_work_more_interesting/</guid>
+    <description><![CDATA[<p>Интерес в работе - это главное, что помогает учиться, лучше работать и зарабатывать больше денег. Чтобы разобраться почему работа становится неинтересной, я решил начать с поиска причин падения интереса в своей работе и нашел несколько:</p>
+<ul>
+<li>Увеличение количества рутины</li>
+<li>Очень сложные задачи, из-за которых работа не продвигается</li>
+<li>Упадок сил</li>
+</ul>]]></description>
+</item><item>
+    <title>Книги, которые я прочел в 2020 году</title>
+    <link>https://garipovazamat.github.io/posts/books2020/</link>
+    <pubDate>Sun, 10 Jan 2021 19:44:00 &#43;0500</pubDate>
+    <author>Автор</author>
+    <guid>https://garipovazamat.github.io/posts/books2020/</guid>
+    <description><![CDATA[<p>В этом году я прочитал 7 книг. Мне очень повезло, все книги оказались полезными и интересными. Не было ни одной, которую я забыл. Перед выбором книг были изучены отзывы по ним. Я стараюсь читать только проверенные книги.<br>
+В этот список входит: техническая, художественная и философская литература.</p>]]></description>
+</item><item>
+    <title>Кэширование данных на разных уровнях</title>
+    <link>https://garipovazamat.github.io/posts/cache_levels/</link>
+    <pubDate>Sun, 06 Dec 2020 18:07:00 &#43;0500</pubDate>
+    <author>Автор</author>
+    <guid>https://garipovazamat.github.io/posts/cache_levels/</guid>
+    <description><![CDATA[<p>Для того, чтобы ускорить запросы и разгрузить сервер, разработчик в первую очередь задумывается над тем, чтобы использовать кеширование. Но кэширование можно делать на разных уровнях.
+В этой статье я рассмотрю возможные уровни, на которых можно применить кэш и какой уровень выбрать в разных ситуациях.</p>]]></description>
+</item><item>
+    <title>Как использовать Docker compose</title>
+    <link>https://garipovazamat.github.io/posts/how_to_use_docker_compose/</link>
+    <pubDate>Mon, 17 Aug 2020 14:09:10 &#43;0500</pubDate>
+    <author>Автор</author>
+    <guid>https://garipovazamat.github.io/posts/how_to_use_docker_compose/</guid>
+    <description><![CDATA[В статье объясню принцип работы и основные параметры полезной утилиты docker-compose]]></description>
+</item><item>
+    <title>Как исправлять сложные баги</title>
+    <link>https://garipovazamat.github.io/posts/how_to_fix_bugs/</link>
+    <pubDate>Sun, 09 Aug 2020 23:04:05 &#43;0500</pubDate>
+    <author>Автор</author>
+    <guid>https://garipovazamat.github.io/posts/how_to_fix_bugs/</guid>
+    <description><![CDATA[<p>Любому разработчику приходиться сталкиваться с багами в своем проекте. Иногда попадаются такие, которые трудно исправить. Самая частая причина этого - трудно найти причину их возникновения. С этой статья я рассмотрю свой подход к исправлению таких багов.</p>]]></description>
+</item><item>
+    <title>Полезные приемы ускоряющие работу разработчика</title>
+    <link>https://garipovazamat.github.io/posts/most_useful_techniques/</link>
+    <pubDate>Sun, 07 Jun 2020 18:54:39 &#43;0500</pubDate>
+    <author>Автор</author>
+    <guid>https://garipovazamat.github.io/posts/most_useful_techniques/</guid>
+    <description><![CDATA[При написании кода, разработчику часто приходится делать рутинную работу. Её можно автоматизировать. О том, как я это делаю, в этой статье.]]></description>
+</item></channel>
+</rss>

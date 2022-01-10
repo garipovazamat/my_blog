@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Полезные приемы ускоряющие работу разработчика - Гарипов Азамат</title><meta name="Description" content="При написании кода, разработчику часто приходится делать рутинную работу. Её можно автоматизировать. О том, как я это делаю, в этой статье."><meta property="og:title" content="Полезные приемы ускоряющие работу разработчика" />
+<meta property="og:description" content="При написании кода, разработчику часто приходится делать рутинную работу. Её можно автоматизировать. О том, как я это делаю, в этой статье." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://garipovazamat.github.io/posts/most_useful_techniques/" /><meta property="og:image" content="https://garipovazamat.github.io/posts/most_useful_techniques/most_often_tools.jpeg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-06-07T18:54:39+05:00" />
+<meta property="article:modified_time" content="2020-06-07T18:54:39+05:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://garipovazamat.github.io/posts/most_useful_techniques/most_often_tools.jpeg"/>
+<meta name="twitter:title" content="Полезные приемы ускоряющие работу разработчика"/>
+<meta name="twitter:description" content="При написании кода, разработчику часто приходится делать рутинную работу. Её можно автоматизировать. О том, как я это делаю, в этой статье."/>
+<meta name="application-name" content="Гарипов Азамат">
+<meta name="apple-mobile-web-app-title" content="Гарипов Азамат"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://garipovazamat.github.io/posts/most_useful_techniques/" /><link rel="next" href="https://garipovazamat.github.io/posts/how_to_fix_bugs/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css">
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(56931001, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/56931001" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+<meta name="yandex-verification" content="fc4f4e826ae11872" />
+</head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Гарипов Азамат">Гарипов Азамат</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/categories/%D1%81%D1%82%D0%B0%D1%82%D1%8C%D0%B8/"> Cтатьи </a><a class="menu-item" href="/devlog/"> Dev log </a><a class="menu-item" href="/about"> Обо мне </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Сменить Тему">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Гарипов Азамат">Гарипов Азамат</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/categories/%D1%81%D1%82%D0%B0%D1%82%D1%8C%D0%B8/" title="">Cтатьи</a><a class="menu-item" href="/devlog/" title="">Dev log</a><a class="menu-item" href="/about" title="">Обо мне</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Сменить Тему">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Содержание</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Полезные приемы ускоряющие работу разработчика</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Азамат</a></span>&nbsp;<span class="post-category">включен в <a href="/categories/%D1%81%D1%82%D0%B0%D1%82%D1%8C%D0%B8/"><i class="far fa-folder fa-fw"></i>Статьи</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-06-07">2020-06-07</time>&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/most_useful_techniques/most_often_tools.jpeg"
+        data-srcset="/posts/most_useful_techniques/most_often_tools.jpeg, /posts/most_useful_techniques/most_often_tools.jpeg 1.5x, /posts/most_useful_techniques/most_often_tools.jpeg 2x"
+        data-sizes="auto"
+        alt="/posts/most_useful_techniques/most_often_tools.jpeg"
+        title="При написании кода, разработчику часто приходится делать рутинную работу. Её можно автоматизировать. О том, как я это делаю, в этой статье." /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Содержание</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#автоматическое-переименование-переменных-методов-классов-и-тд">Автоматическое переименование переменных, методов, классов и т.д.</a></li>
+        <li><a href="#перемещение-курсора-с-одновременно-зажатой-ctrl">Перемещение курсора с одновременно зажатой Ctrl.</a></li>
+        <li><a href="#поиск-введенной-команды-в-командной-строке">Поиск введенной команды в командной строке.</a></li>
+        <li><a href="#пре-коммиты-и-пре-пуши">Пре-коммиты и пре-пуши.</a></li>
+        <li><a href="#выделение-куска-кода-в-отдельный-метод">Выделение куска кода в отдельный метод.</a></li>
+        <li><a href="#автоформатирование-кода">Автоформатирование кода.</a></li>
+        <li><a href="#синхронизация-проекта-с-сервером-с-помощью-lsync">Синхронизация проекта с сервером с помощью lsync.</a></li>
+        <li><a href="#выставление-сразу-нескольких-курсоров">Выставление сразу нескольких курсоров.</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>При написании кода, разработчику часто приходится делать рутинную работу. Это, например, выделение кода в отдельный метод или переименование названия классов или методов. Такие вещи не требуют творческого подхода, а только отнимают время.<br>
+Поэтому их нужно автоматизировать как можно раньше. В этой статье я расскажу о самых часто используемых приемах в своей работе, которые и вам могут быть полезны.</p>
+<h3 id="автоматическое-переименование-переменных-методов-классов-и-тд">Автоматическое переименование переменных, методов, классов и т.д.</h3>
+<p>Все современные IDE поддерживают такую возможность. Например в JetBrain (PHPStorm, IntelJIDEA и др.) это можно сделать комбинацией Shift+F6. Главное, чтобы ваш код везде пробивался, т.е. IDE смогла понимать, что в определенном месте именно этот тот метод нужного класса, например.</p>
+<h3 id="перемещение-курсора-с-одновременно-зажатой-ctrl">Перемещение курсора с одновременно зажатой Ctrl.</h3>
+<p>Мы очень часто перемещаем курсор по коду с помощью мыши или, зажимая стрелку ←↑→↓ . Это часто отнимает время и отвлекает от основного процесса. Зажимая Ctrl можно перемещаться сразу на одно слово, а если к этой комбинации добавить ещё Shift, то можно очень быстро выделять нужный текст. Также полезны клавиши Home, End. Старайтесь приучить себя использовать их постоянно и тогда мышка окажется нужной гораздо реже.</p>
+<h3 id="поиск-введенной-команды-в-командной-строке">Поиск введенной команды в командной строке.</h3>
+<p>С помощью комбинации Ctrl+R вы можете перейти в режим поиска команды. Мне часто пригождается искать команду, которую я вводил несколько дней назад, а по новой вводить её не хочется. Тогда я просто нажимаю Ctrl+R в терминале и затем ввожу начало команды и появляется подсказка. Вы можете повторно нажать Ctrl+R и появится следующая подсказка. Затем нажимаете Enter и у вас окажется набранной нужная команда.</p>
+<h3 id="пре-коммиты-и-пре-пуши">Пре-коммиты и пре-пуши.</h3>
+<p>Лучше сразу настроить GIT в проекте так, чтобы перед коммитом и пушом запускались тесты и происходила проверка кода линтерами. Это спасет вас от лишних багов, если вы быстро поправили маленькую ошибку и забыли запустить тесты. Также вам не нужно будет делать лишних операций самому.</p>
+<h3 id="выделение-куска-кода-в-отдельный-метод">Выделение куска кода в отдельный метод.</h3>
+<p>Моя IDE (PHPStorm) поддерживает автоматический рефакторинг с помощью комбинации Ctrl+Alt+M или Refactor -&gt; Extract -&gt; Method. Для меня эта фича оказалась целым открытием, и сильно упростила работу. Теперь не нужно руками переносить аргументы и повторно указывать им тип. Возможно в вашей IDE тоже есть такая фича.</p>
+<h3 id="автоформатирование-кода">Автоформатирование кода.</h3>
+<p>Лучше сразу настроить автоформатирование, чем руками каждый раз настраивать отступы. Ваша IDE сама в процессе будет показывать где вы написали не по стандарту.</p>
+<h3 id="синхронизация-проекта-с-сервером-с-помощью-lsync">Синхронизация проекта с сервером с помощью lsync.</h3>
+<p>Синхронизация через обычный ftp является очень долгим способом залить изменения. Lsync гораздо быстрее. Особенно если вы обновляете внешние пакеты, или переключаетесь между ветками. Она передает файлы по сети в сжатом виде и сразу в несколько потоков.</p>
+<h3 id="выставление-сразу-нескольких-курсоров">Выставление сразу нескольких курсоров.</h3>
+<p>В PHPStorm можно выставить курсор сразу в несколько мест. И затем выделять сразу несколько слов или добавлять новые символы. Удобно, когда нужно в нескольких строках произвести удаление или вставку.</p>
+<p><figure><a class="lightgallery" href="/posts/most_useful_techniques/multi-cursor.gif" title="Multi-cursor example" data-thumbnail="/posts/most_useful_techniques/multi-cursor.gif" data-sub-html="<h2>Пример мульти-курсора в PHPStorm</h2><p>Multi-cursor example</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="multi-cursor.gif"
+            data-srcset="/posts/most_useful_techniques/multi-cursor.gif, multi-cursor.gif 1.5x, /posts/most_useful_techniques/multi-cursor.gif 2x"
+            data-sizes="auto"
+            alt="/posts/most_useful_techniques/multi-cursor.gif" />
+    </a><figcaption class="image-caption">Пример мульти-курсора в PHPStorm</figcaption>
+    </figure></p>
+<p>IDE и командная строка - это основные инструменты, с которыми работает разработчик. Поэтому очень полезно пополнять багаж знаний о них и регулярно узнавать новые комбинации и способы как автоматизировать свою работу. Не игнорируйте советы в вашей IDE,если они есть, и пробуйте их. Может оказаться, что некоторые будут очень полезны вам.</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Oбновлена 2020-06-07</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Поделиться в Twitter" data-sharer="twitter" data-url="https://garipovazamat.github.io/posts/most_useful_techniques/" data-title="Полезные приемы ускоряющие работу разработчика" data-via="AzamatGaripov" data-hashtags="Разработка,Инструменты,Комбинации клавиш,Рефакторинг"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Поделиться в Facebook" data-sharer="facebook" data-url="https://garipovazamat.github.io/posts/most_useful_techniques/" data-hashtag="Разработка"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Поделиться в Linkedin" data-sharer="linkedin" data-url="https://garipovazamat.github.io/posts/most_useful_techniques/"><i class="fab fa-linkedin fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0/">Разработка</a>,&nbsp;<a href="/tags/%D0%B8%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B/">Инструменты</a>,&nbsp;<a href="/tags/%D0%BA%D0%BE%D0%BC%D0%B1%D0%B8%D0%BD%D0%B0%D1%86%D0%B8%D0%B8-%D0%BA%D0%BB%D0%B0%D0%B2%D0%B8%D1%88/">Комбинации клавиш</a>,&nbsp;<a href="/tags/%D1%80%D0%B5%D1%84%D0%B0%D0%BA%D1%82%D0%BE%D1%80%D0%B8%D0%BD%D0%B3/">Рефакторинг</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Назад</a></span>&nbsp;|&nbsp;<span><a href="/">Домой</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+            <a href="/posts/how_to_fix_bugs/" class="next" rel="next" title="Как исправлять сложные баги">Как исправлять сложные баги<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Сделано <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.91.2">Hugo</a> | Тема - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Азамат</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Наверх">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="Посмотреть комментарии">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><script type="text/javascript" src="https://garipovazamat-1.disqus.com/embed.js" defer></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Копировать в буфер обмена","maxShownLines":10},"comment":{},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

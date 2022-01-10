@@ -1,0 +1,21 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Categories - Категория - Гарипов Азамат</title>
+        <link>https://garipovazamat.github.io/categories/</link>
+        <description>Categories - Категория - Гарипов Азамат</description>
+        <generator>Hugo -- gohugo.io</generator><lastBuildDate>Sun, 09 Jan 2022 21:37:00 &#43;0500</lastBuildDate><atom:link href="https://garipovazamat.github.io/categories/" rel="self" type="application/rss+xml" /><item>
+    <title>Статьи</title>
+    <link>https://garipovazamat.github.io/categories/%D1%81%D1%82%D0%B0%D1%82%D1%8C%D0%B8/</link>
+    <pubDate>Sun, 09 Jan 2022 21:37:00 &#43;0500</pubDate>
+    <author>Автор</author>
+    <guid>https://garipovazamat.github.io/categories/%D1%81%D1%82%D0%B0%D1%82%D1%8C%D0%B8/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Dev Log</title>
+    <link>https://garipovazamat.github.io/categories/dev-log/</link>
+    <pubDate>Tue, 06 Oct 2020 20:16:31 &#43;0500</pubDate>
+    <author>Автор</author>
+    <guid>https://garipovazamat.github.io/categories/dev-log/</guid>
+    <description><![CDATA[]]></description>
+</item></channel>
+</rss>

@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>борьба с багами - Тэг - Гарипов Азамат</title>
+        <link>https://garipovazamat.github.io/tags/%D0%B1%D0%BE%D1%80%D1%8C%D0%B1%D0%B0-%D1%81-%D0%B1%D0%B0%D0%B3%D0%B0%D0%BC%D0%B8/</link>
+        <description>борьба с багами - Тэг - Гарипов Азамат</description>
+        <generator>Hugo -- gohugo.io</generator><lastBuildDate>Sun, 09 Aug 2020 23:04:05 &#43;0500</lastBuildDate><atom:link href="https://garipovazamat.github.io/tags/%D0%B1%D0%BE%D1%80%D1%8C%D0%B1%D0%B0-%D1%81-%D0%B1%D0%B0%D0%B3%D0%B0%D0%BC%D0%B8/" rel="self" type="application/rss+xml" /><item>
+    <title>Как исправлять сложные баги</title>
+    <link>https://garipovazamat.github.io/posts/how_to_fix_bugs/</link>
+    <pubDate>Sun, 09 Aug 2020 23:04:05 &#43;0500</pubDate>
+    <author>Автор</author>
+    <guid>https://garipovazamat.github.io/posts/how_to_fix_bugs/</guid>
+    <description><![CDATA[<p>Любому разработчику приходиться сталкиваться с багами в своем проекте. Иногда попадаются такие, которые трудно исправить. Самая частая причина этого - трудно найти причину их возникновения. С этой статья я рассмотрю свой подход к исправлению таких багов.</p>]]></description>
+</item></channel>
+</rss>

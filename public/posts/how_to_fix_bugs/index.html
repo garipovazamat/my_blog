@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Как исправлять сложные баги - Гарипов Азамат</title><meta name="Description" content=""><meta property="og:title" content="Как исправлять сложные баги" />
+<meta property="og:description" content="Любому разработчику приходиться сталкиваться с багами в своем проекте. Иногда попадаются такие, которые трудно исправить. Самая частая причина этого - трудно найти причину их возникновения. С этой статья я рассмотрю свой подход к исправлению таких багов." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://garipovazamat.github.io/posts/how_to_fix_bugs/" /><meta property="og:image" content="https://garipovazamat.github.io/posts/how_to_fix_bugs/fix_bugs.jpg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-08-09T23:04:05+05:00" />
+<meta property="article:modified_time" content="2020-08-09T23:04:05+05:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://garipovazamat.github.io/posts/how_to_fix_bugs/fix_bugs.jpg"/>
+<meta name="twitter:title" content="Как исправлять сложные баги"/>
+<meta name="twitter:description" content="Любому разработчику приходиться сталкиваться с багами в своем проекте. Иногда попадаются такие, которые трудно исправить. Самая частая причина этого - трудно найти причину их возникновения. С этой статья я рассмотрю свой подход к исправлению таких багов."/>
+<meta name="application-name" content="Гарипов Азамат">
+<meta name="apple-mobile-web-app-title" content="Гарипов Азамат"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://garipovazamat.github.io/posts/how_to_fix_bugs/" /><link rel="prev" href="https://garipovazamat.github.io/posts/most_useful_techniques/" /><link rel="next" href="https://garipovazamat.github.io/posts/how_to_use_docker_compose/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css">
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(56931001, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/56931001" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+<meta name="yandex-verification" content="fc4f4e826ae11872" />
+</head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Гарипов Азамат">Гарипов Азамат</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/categories/%D1%81%D1%82%D0%B0%D1%82%D1%8C%D0%B8/"> Cтатьи </a><a class="menu-item" href="/devlog/"> Dev log </a><a class="menu-item" href="/about"> Обо мне </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Сменить Тему">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Гарипов Азамат">Гарипов Азамат</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/categories/%D1%81%D1%82%D0%B0%D1%82%D1%8C%D0%B8/" title="">Cтатьи</a><a class="menu-item" href="/devlog/" title="">Dev log</a><a class="menu-item" href="/about" title="">Обо мне</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Сменить Тему">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Содержание</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Как исправлять сложные баги</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Азамат</a></span>&nbsp;<span class="post-category">включен в <a href="/categories/%D1%81%D1%82%D0%B0%D1%82%D1%8C%D0%B8/"><i class="far fa-folder fa-fw"></i>Статьи</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-09">2020-08-09</time>&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/how_to_fix_bugs/fix_bugs.jpg"
+        data-srcset="/posts/how_to_fix_bugs/fix_bugs.jpg, /posts/how_to_fix_bugs/fix_bugs.jpg 1.5x, /posts/how_to_fix_bugs/fix_bugs.jpg 2x"
+        data-sizes="auto"
+        alt="/posts/how_to_fix_bugs/fix_bugs.jpg"
+        title="/posts/how_to_fix_bugs/fix_bugs.jpg" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Содержание</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#самый-первый-шаг">Самый первый шаг</a></li>
+    <li><a href="#ситуации-когда-не-удается-воспроизвести-ошибку">Ситуации, когда не удается воспроизвести ошибку</a></li>
+    <li><a href="#исправляйте-причину-ошибки-а-не-симптом">Исправляйте причину ошибки, а не симптом</a></li>
+    <li><a href="#вывод">Вывод</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>Любому разработчику приходиться сталкиваться с багами в своем проекте. Иногда попадаются такие, которые трудно исправить. Самая частая причина этого - трудно найти причину их возникновения. С этой статья я рассмотрю свой подход к исправлению таких багов.</p>
+<h2 id="самый-первый-шаг">Самый первый шаг</h2>
+<p>Первый шаг - нужно воспроизвести ошибку. Вы должны точно знать, при каких условиях она возникает. Иначе, далее вы просто не сможете найти её причину. Нельзя исправить что-то, если вы не знаете что исправлять.</p>
+<p>Далее, я выделил для себя 2 подхода поиска, я называю их: аналитический и экспериментальный.<br>
+Аналитический - это когда вы сужаете круг поиска за счет своих знаний и фактов, которые вам известны. Вы собираете уже имеющиеся логи, используете свои знания того, как устроена система, и за счет своих рассуждений определяете, где искать проблему. Также вы смотрите в коде, и пытаетесь интерпретировать код у себя в голове и вычислить место, где находится причина бага.</p>
+<p>Экспериментальный способ проще. Вы расставляете логи в коде, перебираете различные варианты, собирая факты путем эксперементов, и потихоньку сужаете круг поиска. Этот способ, конечно, трудно применить в чистом виде. Вам изначально нужно знать что-то о системе, чтобы понимать, где экспериментировать и как.</p>
+<p>В любом случае, вы будете комбинировать оба этих подхода. Но очень часто разработчики сильно углубляются в аналитический подход, хотя можно просто попробовать добавить лог и быстро получить нужный ответ. С помощью экспериментов вы ускоряете поиск, за счет того, что получаете нужные данные.<br>
+Этим и отличается программирование от других инженерных областей. Вы можете экспериментировать без больших затрат. Вы можете увидеть результат работы кода сразу. У вас возник вопрос, просто проверьте это, написав код, или, выводя нужные данные в лог.</p>
+<h2 id="ситуации-когда-не-удается-воспроизвести-ошибку">Ситуации, когда не удается воспроизвести ошибку</h2>
+<p>Иногда бывает и такое. Вы точно знаете, что ошибка есть. Вам, например, жалуются пользователи или вы сами её обнаруживаете. Но повторить её не удается.</p>
+<p>Приведу пример. Иногда у пользователя, после создания объявления, не открывается само объявление с ошибкой о том, что оно не существует. Это происходит какое-то время, потом оно начинает открываться. Происходит это редко и стабильно не воспроизводится. Проблема оказалась в ошибке репликации базы. Сохранение происходит в основную базу (мастер), но чтение происходит из вспомогательных. И из-за большой нагрузки на базу, данные не успевают записаться из мастера в вспомогательную базу. В данном случае может помочь информация о нагрузке на базу. Также, во время большой нагрузки, в логах могут часто сыпаться ошибки о таймауте на запросы в базу. И конечно, важно знать как работает база, чтобы понимать, что такая ошибка возможна.</p>
+<p>Тут выход только один. Собрать максимальное количество данных, придумать как можно больше гипотез и проверить каждую. Чем больше данных соберете, тем больше гипотез придумаете и отбросите.
+Нахождение способа воспроизвести ошибку и есть сама задача в этом случае. После того, как вы проверили гипотезу и нашли способ её воспроизвести, исправьте ошибку и подождите, будут ли ещё жалобы. Возможно причин ошибки несколько, и, поскольку неизвестно, как на самом деле произошла ошибка, лучше минимизировать их количество и подождать новых.</p>
+<h2 id="исправляйте-причину-ошибки-а-не-симптом">Исправляйте причину ошибки, а не симптом</h2>
+<p>Часто ошибки являются лишь симптомом какой-то более сложной ошибки. Хочется убрать ошибку как можно быстрее, и не разбираться в её причинах.
+Если исправить только симптом, то сама проблема окажется закопанной ещё глубже. Из-за нее могут возникнуть другие проблемы, и найти её в будущем будет сложнее. К тому же, то место, где вы её исправили, будет неоправданно усложнено лишней логикой. Это приведет к усложнению кода. А это - к замедлению вашей работы над этим проектом в будущем.</p>
+<h2 id="вывод">Вывод</h2>
+<p>Ситуации, в которых могут возникнуть баги, бывают очень разные. И подходы в их решении могут отличаться. Но, практически в любом случае, мы начинаем с одного и того же. Я лишь постарался это описать из своего опыта.<br>
+Больше экспериментируйте при поиске причины и старайтесь разбираться в технологиях, которые используете. Не зная этого, можно просто упустить причину проблемы.</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Oбновлена 2020-08-09</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Поделиться в Twitter" data-sharer="twitter" data-url="https://garipovazamat.github.io/posts/how_to_fix_bugs/" data-title="Как исправлять сложные баги" data-via="AzamatGaripov" data-hashtags="исправление багов,борьба с багами,исправление ошибок"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Поделиться в Facebook" data-sharer="facebook" data-url="https://garipovazamat.github.io/posts/how_to_fix_bugs/" data-hashtag="исправление багов"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Поделиться в Linkedin" data-sharer="linkedin" data-url="https://garipovazamat.github.io/posts/how_to_fix_bugs/"><i class="fab fa-linkedin fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%D0%B8%D1%81%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B1%D0%B0%D0%B3%D0%BE%D0%B2/">исправление багов</a>,&nbsp;<a href="/tags/%D0%B1%D0%BE%D1%80%D1%8C%D0%B1%D0%B0-%D1%81-%D0%B1%D0%B0%D0%B3%D0%B0%D0%BC%D0%B8/">борьба с багами</a>,&nbsp;<a href="/tags/%D0%B8%D1%81%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BE%D1%88%D0%B8%D0%B1%D0%BE%D0%BA/">исправление ошибок</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Назад</a></span>&nbsp;|&nbsp;<span><a href="/">Домой</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/most_useful_techniques/" class="prev" rel="prev" title="Полезные приемы ускоряющие работу разработчика"><i class="fas fa-angle-left fa-fw"></i>Полезные приемы ускоряющие работу разработчика</a>
+            <a href="/posts/how_to_use_docker_compose/" class="next" rel="next" title="Как использовать Docker compose">Как использовать Docker compose<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Сделано <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.91.2">Hugo</a> | Тема - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Азамат</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Наверх">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="Посмотреть комментарии">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><script type="text/javascript" src="https://garipovazamat-1.disqus.com/embed.js" defer></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Копировать в буфер обмена","maxShownLines":10},"comment":{},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

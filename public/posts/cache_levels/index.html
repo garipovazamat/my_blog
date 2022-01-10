@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Кэширование данных на разных уровнях - Гарипов Азамат</title><meta name="Description" content=""><meta property="og:title" content="Кэширование данных на разных уровнях" />
+<meta property="og:description" content="Для того, чтобы ускорить запросы и разгрузить сервер, разработчик в первую очередь задумывается над тем, чтобы использовать кеширование. Но кэширование можно делать на разных уровнях.
+В этой статье я рассмотрю возможные уровни, на которых можно применить кэш и какой уровень выбрать в разных ситуациях." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://garipovazamat.github.io/posts/cache_levels/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-12-06T18:07:00+05:00" />
+<meta property="article:modified_time" content="2020-12-06T18:07:00+05:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Кэширование данных на разных уровнях"/>
+<meta name="twitter:description" content="Для того, чтобы ускорить запросы и разгрузить сервер, разработчик в первую очередь задумывается над тем, чтобы использовать кеширование. Но кэширование можно делать на разных уровнях.
+В этой статье я рассмотрю возможные уровни, на которых можно применить кэш и какой уровень выбрать в разных ситуациях."/>
+<meta name="application-name" content="Гарипов Азамат">
+<meta name="apple-mobile-web-app-title" content="Гарипов Азамат"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://garipovazamat.github.io/posts/cache_levels/" /><link rel="prev" href="https://garipovazamat.github.io/posts/how_to_use_docker_compose/" /><link rel="next" href="https://garipovazamat.github.io/posts/books2020/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css">
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(56931001, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/56931001" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+<meta name="yandex-verification" content="fc4f4e826ae11872" />
+</head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Гарипов Азамат">Гарипов Азамат</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/categories/%D1%81%D1%82%D0%B0%D1%82%D1%8C%D0%B8/"> Cтатьи </a><a class="menu-item" href="/devlog/"> Dev log </a><a class="menu-item" href="/about"> Обо мне </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Сменить Тему">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Гарипов Азамат">Гарипов Азамат</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/categories/%D1%81%D1%82%D0%B0%D1%82%D1%8C%D0%B8/" title="">Cтатьи</a><a class="menu-item" href="/devlog/" title="">Dev log</a><a class="menu-item" href="/about" title="">Обо мне</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Сменить Тему">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Содержание</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Кэширование данных на разных уровнях</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Азамат</a></span>&nbsp;<span class="post-category">включен в <a href="/categories/%D1%81%D1%82%D0%B0%D1%82%D1%8C%D0%B8/"><i class="far fa-folder fa-fw"></i>Статьи</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-12-06">2020-12-06</time>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Содержание</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#на-стороне-клиента">На стороне клиента</a></li>
+        <li><a href="#на-уровне-nginx-сервера">На уровне nginx сервера</a></li>
+        <li><a href="#на-уровне-backend-сервера">На уровне backend сервера</a></li>
+        <li><a href="#кэширование-на-уровне-бд">Кэширование на уровне БД</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>Для того, чтобы ускорить запросы и разгрузить сервер, разработчик в первую очередь задумывается над тем, чтобы использовать кеширование. Но кэширование можно делать на разных уровнях.
+В этой статье я рассмотрю возможные уровни, на которых можно применить кэш и какой уровень выбрать в разных ситуациях.</p>
+<h3 id="на-стороне-клиента">На стороне клиента</h3>
+<p>На этом уровне, данные, полученные при первом запросе сохраняются у клиента и повторно клиент уже не обращается за данными совсем. Если это web приложение, то данные сохраняются в браузере. В мобильном приложении это могут быть данные, сохраненные в локальной базе данных, например sqlite.</p>
+<p>В браузере создать кэш быстрее всего. Достаточно передать заголовок Expires, с датой, до которой кэш будет жить.<br>
+Этот способ самый быстрый и наименее ресурсозатратный на сервере, и практически не требует доработок кода в web-приложении.<br>
+Такой кэш тяжело контролировать, потому что клиент не сможет получить информацию о том, что кэш устарел раньше времени. Он попросту не делает никаких запросов на сервер. В этом и смысл кэша. Пока у пользователя не протухнет кэш, данные не изменятся и он не отправит запрос.<br>
+Отсюда происходит и преимущество такого кэширования. Этот запрос настолько оптимизируется, что не делается совсем и не используется сетевой трафик.</p>
+<p>Но есть другая проблема - кэширование происходит один раз на каждого клиента. Если бы кэш был сразу на всех, то его можно было бы один раз подготовить и больше не делать обработок запроса. Но если клиенты делают запросы редко, но самих клиентов много, то тогда кэширование на стороне клиента становится бесполезным.</p>
+<h3 id="на-уровне-nginx-сервера">На уровне nginx сервера</h3>
+<p><figure><a class="lightgallery" href="/posts/cache_levels/nginx.png" title="кэширование в nginx" data-thumbnail="/posts/cache_levels/nginx.png" data-sub-html="<h2>Кэширование в nginx</h2><p>кэширование в nginx</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="nginx.png"
+            data-srcset="/posts/cache_levels/nginx.png, nginx.png 1.5x, /posts/cache_levels/nginx.png 2x"
+            data-sizes="auto"
+            alt="/posts/cache_levels/nginx.png" />
+    </a><figcaption class="image-caption">Кэширование в nginx</figcaption>
+    </figure>
+Кэширование происходит следующим образом - при первом запросе клиента nginx сервер пересылает запрос в бэкенд и получает результат обработки запроса. Затем он сохраняет в кэш результат обработки и отдает ответ с этими результатами клиенту. При следующем таком же запросе от любого клиента, он уже не будет обращаться к бэкенду, а возьмет сохраненный результат из кэша и вернет ответ.</p>
+<p>Настройка кэширования происходит преимущественно настройками <a href="http://nginx.org/ru/docs/http/ngx_http_fastcgi_module.html#fastcgi_cache_bypass" target="_blank" rel="noopener noreffer">fastcgi_cache_bypass</a> и <a href="http://nginx.org/ru/docs/http/ngx_http_fastcgi_module.html#fastcgi_cache_key" target="_blank" rel="noopener noreffer">fastcgi_cache_key</a>.<br>
+Преимущество метода в том, что мы кэшируем ответ целиком и нам не нужно ничего дорабатывать на бэкенде. Код на бэкенде останется проще.<br>
+Но такому кэшированию желательно быть очевидным. Чтобы мы могли отличать кэшируемые запросы от не кэшируемых. Например в кэшируемых запросах, в ссылке указывать явно директиву cached так: <code>http://api.site.ru/path/cached</code> . Это нужно на тот случай, если из каких-то мест будет нужно брать не кэшированный ответ и понимать, где есть кэширование, а где нет, не копаясь в конфигах nginx.</p>
+<h3 id="на-уровне-backend-сервера">На уровне backend сервера</h3>
+<p>Тут уже мы можем выбирать, какую часть данных будем кэшировать, а какую получать по новой. Сохранение данных происходит по ключу.</p>
+<p>Самая распространенная технология - <strong>memcached</strong>. Она позволяет сохранять данные в оперативной памяти, и быстро получать их по ключу. Недостаток в том, что она имеет ограничение в 1 Мб на хранимое значение, в случае перезагрузки memcached сервера, все данные в кэше будут потеряны.<br>
+Более сложная технология, которая позволяет хранить в оперативной памяти и в фоне сохранять данные в постоянную память - <strong>redis</strong>. Она имеет больше памяти для хранения значений, но и требует немного больше ресурсов чем memcached.<br>
+Memcached стоит выбирать при кэшировании небольших кусков данных, к которым происходит очень частое обращение. При этом долговечность хранения данных в кэше не сильно критична. Если же вы хотите возможности сложной настройки кэширования, тогда выбирайте redis.</p>
+<p>При работе с кэшированием по ключу нужно учитывать, что возможно тяжелое кэширование. Если мы долго готовим данные, перед тем как их сохранить в кэш (например выполняем тяжелый запрос в базу), возникает промежуток времени, в котором кэш ещё не готов, но пользователи могут запрашивать данные из этого кэша. В этот момент кэш начнет формироваться повторно. Защититься от перегрузок в такой момент можно например при помощи <a href="https://ruhighload.com/%d0%a2%d1%8f%d0%b6%d0%b5%d0%bb%d0%be%d0%b5&#43;%d0%ba%d1%8d%d1%88%d0%b8%d1%80%d0%be%d0%b2%d0%b0%d0%bd%d0%b8%d0%b5" target="_blank" rel="noopener noreffer">дублирования кэшей</a>.</p>
+<p>Более подробная статья про memcached и redis - <a href="https://habr.com/ru/company/oleg-bunin/blog/316652/" target="_blank" rel="noopener noreffer">https://habr.com/ru/company/oleg-bunin/blog/316652/</a></p>
+<h3 id="кэширование-на-уровне-бд">Кэширование на уровне БД</h3>
+<p>Многие базы данных могут сами кэшировать запрашиваемые данные.<br>
+Но может возникнуть вопрос - почему бы не использовать memcached вместо кэша внутри базы? Дело в том, что база данных может сама контроллировать свежесть данных в себе. И если в кэше данные будут старее чем в самой базе, она обновит этот кэш. Т.е. пользователю БД не нужно думать над обновлением кэша.<br>
+Про кэширование в mysql - <a href="https://habr.com/ru/post/41166/" target="_blank" rel="noopener noreffer">https://habr.com/ru/post/41166/</a><br>
+В mongodb - <a href="https://habr.com/ru/post/219481/" target="_blank" rel="noopener noreffer">https://habr.com/ru/post/219481/</a></p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Oбновлена 2020-12-06</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Поделиться в Twitter" data-sharer="twitter" data-url="https://garipovazamat.github.io/posts/cache_levels/" data-title="Кэширование данных на разных уровнях" data-via="AzamatGaripov" data-hashtags="Разработка,Кэширование,nginx,оптимизация,highload"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Поделиться в Facebook" data-sharer="facebook" data-url="https://garipovazamat.github.io/posts/cache_levels/" data-hashtag="Разработка"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Поделиться в Linkedin" data-sharer="linkedin" data-url="https://garipovazamat.github.io/posts/cache_levels/"><i class="fab fa-linkedin fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0/">Разработка</a>,&nbsp;<a href="/tags/%D0%BA%D1%8D%D1%88%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5/">Кэширование</a>,&nbsp;<a href="/tags/nginx/">nginx</a>,&nbsp;<a href="/tags/%D0%BE%D0%BF%D1%82%D0%B8%D0%BC%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F/">оптимизация</a>,&nbsp;<a href="/tags/highload/">highload</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Назад</a></span>&nbsp;|&nbsp;<span><a href="/">Домой</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/how_to_use_docker_compose/" class="prev" rel="prev" title="Как использовать Docker compose"><i class="fas fa-angle-left fa-fw"></i>Как использовать Docker compose</a>
+            <a href="/posts/books2020/" class="next" rel="next" title="Книги, которые я прочел в 2020 году">Книги, которые я прочел в 2020 году<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Сделано <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.91.2">Hugo</a> | Тема - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Азамат</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Наверх">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="Посмотреть комментарии">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="https://garipovazamat-1.disqus.com/embed.js" defer></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Копировать в буфер обмена","maxShownLines":10},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

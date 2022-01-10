@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>оптимизация - Тэг - Гарипов Азамат</title>
+        <link>https://garipovazamat.github.io/tags/%D0%BE%D0%BF%D1%82%D0%B8%D0%BC%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F/</link>
+        <description>оптимизация - Тэг - Гарипов Азамат</description>
+        <generator>Hugo -- gohugo.io</generator><lastBuildDate>Sun, 06 Dec 2020 18:07:00 &#43;0500</lastBuildDate><atom:link href="https://garipovazamat.github.io/tags/%D0%BE%D0%BF%D1%82%D0%B8%D0%BC%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F/" rel="self" type="application/rss+xml" /><item>
+    <title>Кэширование данных на разных уровнях</title>
+    <link>https://garipovazamat.github.io/posts/cache_levels/</link>
+    <pubDate>Sun, 06 Dec 2020 18:07:00 &#43;0500</pubDate>
+    <author>Автор</author>
+    <guid>https://garipovazamat.github.io/posts/cache_levels/</guid>
+    <description><![CDATA[<p>Для того, чтобы ускорить запросы и разгрузить сервер, разработчик в первую очередь задумывается над тем, чтобы использовать кеширование. Но кэширование можно делать на разных уровнях.
+В этой статье я рассмотрю возможные уровни, на которых можно применить кэш и какой уровень выбрать в разных ситуациях.</p>]]></description>
+</item></channel>
+</rss>
